@@ -30,17 +30,22 @@ function Login() {
             let lastfour = String(pass).slice(-4)
 
             if (values.username === userInfoJson[i].name && values.password === lastfour) {
-                localStorage.setItem('person', JSON.stringify({name:values.username, password:values.password}))
+                localStorage.setItem('person', JSON.stringify({ name: values.username, password: values.password }))
                 Navigate("/home")
                 setUser(userInfoJson[i])
             }
-            else{
-                alert ("user not found")
+            else {
+                alert("user not found")
             }
 
 
             return
         }
+    }
+
+    function logOut(){
+        localStorage.removeItem('preson')
+        Navigate("/login")
     }
 
     return (
