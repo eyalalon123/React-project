@@ -26,11 +26,35 @@ function Login() {
         for (let i = 0; i < userInfoJson.length; i++) {
             let pass = userInfoJson[i].address.geo.lat
             let lastfour = String(pass).slice(-4)
+<<<<<<< HEAD
             values.username === userInfoJson[i].name && values.password === lastfour ? Navigate("/Home") : alert("user not found")
             return
         }
     }
     return(
+=======
+
+            if (values.username === userInfoJson[i].name && values.password === lastfour) {
+                localStorage.setItem('person', JSON.stringify({ name: values.username, password: values.password }))
+                Navigate("/home")
+                setUser(userInfoJson[i])
+            }
+            else {
+                alert("user not found")
+            }
+
+
+            return
+        }
+    }
+
+    function logOut(){
+        localStorage.removeItem('preson')
+        Navigate("/login")
+    }
+
+    return (
+>>>>>>> 3f3c3e672f12ce001f00ee6a53df0107824b2747
         <div>
             {/* <Link to={"/"}>Login</Link> */}
 

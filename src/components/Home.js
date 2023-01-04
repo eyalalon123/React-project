@@ -5,12 +5,16 @@ function Home(){
 
     const { user } = useContext(userContext);
 
-
     return(
         
         <div>
-           
             <h1> What is up {user.name} it is from the PIZZA! </h1>
+           <button>Info</button>
+           <button>ToDo</button>
+           <button>Posts</button>
+           <button>Albums</button>
+           <button>LogOut</button>
+
             
         </div>
     )
