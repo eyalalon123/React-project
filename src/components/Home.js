@@ -1,10 +1,17 @@
-import React from "react";
-
+import React , {useContext} from "react";
+import { Link } from "react-router-dom";
+import { userContext } from "./context";
 function Home(){
+
+    const { user } = useContext(userContext);
+
+
     return(
+        
         <div>
-            <h1>Home page</h1>
-            <p>Wow Your Amazing</p>
+           
+            <h1> What is up {user.name} it is from the PIZZA! </h1>
+            
         </div>
     )
 }

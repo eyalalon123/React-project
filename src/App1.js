@@ -1,14 +1,16 @@
-import { Link, Routes, Route,Navigate} from 'react-router-dom'
+import { Link, Routes, Route} from 'react-router-dom'
 import Home from './components/Home'
 import Login from './components/Login'
+import { UserProvider } from './components/context';
+import "./App.css";
 
 function App(){
     return(
         <>
-        {/* <Link to={"/Login"}>Login</Link> */}
+        <Link to={"/Login"}>Login</Link>
         <Routes>
-            <Route path='/' element={<Login />} />
-            <Route path='/Home' element={<Home />} />
+            <Route path='/Login' element={<Login />}></Route>
+            <Route path='/Home' element={<Home />}></Route>
         </Routes>
         </>
     )
